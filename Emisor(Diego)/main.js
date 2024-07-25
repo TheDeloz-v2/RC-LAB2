@@ -5,7 +5,7 @@ import { checkReceiverChecksum } from './ChecksumFletcher.js';
 
 async function main() {
     try {
-        const data = [1, 0, 1, 1, 0, 0, 1, 0];
+        const data = '11000011';
 
         // Encode the message
         const encodedMessage = encodeMessage(data);
@@ -17,7 +17,7 @@ async function main() {
         const checksum = checkReceiverChecksum(data);
 
         // Display the Fletcher checksum
-        console.log('Fletcher checksum:', checksum);
+        // console.log('Fletcher checksum:', checksum);
     }
     catch (error) {
         console.error('Error:', error.message);
