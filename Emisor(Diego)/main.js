@@ -25,7 +25,7 @@ async function main() {
                 const encodedMessage = encodeMessage(line);
 
                 // Display the encoded message
-                console.log('Encoded message:', encodedMessage);
+                console.log('Mensaje codificado Hamming (7,4):', encodedMessage);
 
                 // Store the encoded message
                 encodedMessages.push(encodedMessage);
@@ -34,7 +34,7 @@ async function main() {
                 const checksum = checkReceiverChecksum(line);
 
                 // Display the Fletcher checksum
-                console.log('Fletcher checksum:', checksum);
+                console.log('Codigo Fletcher Checksum 16:', checksum);
 
                 // Store the checksum
                 encodedMessages.push(checksum);

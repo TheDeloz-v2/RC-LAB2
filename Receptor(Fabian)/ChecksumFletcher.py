@@ -39,6 +39,7 @@ def checkReceiverChecksum():
     """
     # Solicitar mensaje con checksum
     ReceivedMessage = input("Ingrese el mensaje binario: ")
+    ReceivedMessage = ReceivedMessage.replace(" ", "")
     Fletcher = input("Ingrese el fletcher a utilizar: ")
 
     #Calculamos el checksum para los primeros 4 bits

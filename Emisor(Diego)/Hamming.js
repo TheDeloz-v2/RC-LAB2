@@ -15,31 +15,36 @@ function calculateParityBit(encodedMessage, parityPosition) {
 // Function to encode a message using Hamming code
 function encodeMessage(data) {
 
-    data = data.split('').map(Number);
+    let lines = data.split(' ');
 
-    const n = data.length;
-    const m = Math.ceil(Math.log2(n + 1));
-    const encodedMessage = [];  
+    let encodedMessage = [];  
 
-    if (n === 0) {
-        throw new Error('The data is empty');
-    } 
+    for (let line of lines) {
+        line = line.split('').map(Number);
+        const n = line.length;
+        const m = Math.ceil(Math.log2(n + 1));
 
-    if (n % 4 !== 0) {
-        throw new Error('The length of the data must be a multiple of 4');
-    }
+        if (n === 0) {
+            throw new Error('The data is empty');
+        } 
 
-    if (n / 4 > 1) {
-        const vueltas = n / 4;
-
-        for (let i = 0; i < vueltas; i++) {
-            let dataChunk = data.slice(i * 4, (i + 1) * 4);
-            let encodedChunk = encodeChunk(dataChunk);
-            encodedMessage.push(...encodedChunk);
+        if (n % 4 !== 0) {
+            throw new Error('The length of the data must be a multiple of 4');
         }
 
-        return encodedMessage.join('');
+        if (n / 4 > 1) {
+            const vueltas = n / 4;
+
+            for (let i = 0; i < vueltas; i++) {
+                let dataChunk = line.slice(i * 4, (i + 1) * 4);
+                let encodedChunk = encodeChunk(dataChunk);
+                encodedMessage.push(...encodedChunk);
+            }
+            
+        }
     }
+    
+    return encodedMessage.join('');
 }
 
 

@@ -3,7 +3,8 @@ from ChecksumFletcher import checkReceiverChecksum
 
 def main():
     # Ejecutar el algoritmo de Hamming para comprobar la integridad del mensaje
-    received_message = input("Ingrese el mensaje binario concatenado con la información generada por el emisor: ")
+    print("\nHamming (7,4):")
+    received_message = input("Ingrese el mensaje codificado: ")
     result = hamming_decode(received_message)
     
     if result[1] == 'No se detectaron errores':
@@ -17,6 +18,7 @@ def main():
         print(f"Mensaje original: {result2[0]}")
     
     # Ejcuta el algoritmo de Fletcher 16 para comprobar la integridad del codigo
+    print('\nFletcher Checksum 16:')
     corrected_message, status = checkReceiverChecksum()
     
     if corrected_message:
