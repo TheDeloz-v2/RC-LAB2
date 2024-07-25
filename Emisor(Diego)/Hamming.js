@@ -16,6 +16,7 @@ function calculateParityBit(encodedMessage, parityPosition) {
 function encodeMessage(data) {
 
     let lines = data.split(' ');
+    console.log(lines);
 
     let encodedMessage = [];  
 
@@ -32,7 +33,7 @@ function encodeMessage(data) {
             throw new Error('The length of the data must be a multiple of 4');
         }
 
-        if (n / 4 > 1) {
+        if (n / 4 >= 1) {
             const vueltas = n / 4;
 
             for (let i = 0; i < vueltas; i++) {
