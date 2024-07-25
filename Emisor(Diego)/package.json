@@ -1,0 +1,11 @@
+{
+    "type": "module",
+    "name": "emisor",
+    "version": "1.0.0",
+    "main": "Main.js",
+    "scripts": {
+        "start": "node Main.js"
+    },
+    "author": "Diego",
+    "license": "ISC"
+}
