@@ -15,8 +15,20 @@ function fletcher16(data) {
     }
     
     const code = (sum2 << 8) | sum1;
+    
+    let codehx = code.toString(16)
 
-    return code.toString(16);
+    if (codehx.length === 1) {
+        codehx = '000' + codehx;
+    }
+    else if (codehx.length === 2) {
+        codehx = '00' + codehx;
+    }
+    else if (codehx.length === 3) {
+        codehx = '0' + codehx;
+    }
+
+    return codehx;
 }
 
 // Function to check the checksum of a received message
